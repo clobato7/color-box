@@ -7,7 +7,8 @@ import Boxes from './Boxes';
 function App() {
   return (
     <>
-      <Boxes x={8} y={8} />
+      <h2>Jogo do Arthur</h2>
+      <Boxes x={6} y={6} />
     </>
   );
 }
