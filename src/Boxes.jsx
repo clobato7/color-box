@@ -74,5 +74,5 @@ export default function Boxes({ x, y }) {
     return boxesColors;
   }
 
-  return <>{renderBoxes()}</>;
+  return <div className="boxes">{renderBoxes()}</div>;
 }
