@@ -26,7 +26,7 @@ export default function Boxes({ x, y }) {
   // console.log(gridColors);
 
   const changeColor = (i, j) => {
-    console.log(`clicou no ${i} e ${j}`);
+    // console.log(`clicou no ${i} e ${j}`);
 
     const actualColor = gridColors[i][j];
     const otherColors = colors.filter((c) => c !== actualColor);
