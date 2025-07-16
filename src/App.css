@@ -62,3 +62,13 @@ h2 {
   height: 100%;
   border: 1px solid black;
 }
+
+.winScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.winScreen button {
+  margin: 4px;
+}

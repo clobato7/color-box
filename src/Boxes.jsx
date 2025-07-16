@@ -1,6 +1,8 @@
 import Box from './Box';
 import { data } from './data/data.js';
 import { useState } from 'react';
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
 
 export default function Boxes({ x, y }) {
   // const colors = ['#39FF14', '#FF3131', '#00FFFF', '#FF6EC7', '#FFFF33'];
@@ -25,6 +27,10 @@ export default function Boxes({ x, y }) {
   const [gridColors, setGridColors] = useState(generateGridColors);
   // console.log(gridColors);
 
+  // variavel que mostra a imagem do heroi
+  const [win, setWin] = useState(false);
+  const [winImg, setWinImg] = useState('');
+
   const changeColor = (i, j) => {
     // console.log(`clicou no ${i} e ${j}`);
 
@@ -46,7 +52,9 @@ export default function Boxes({ x, y }) {
     // se todas as cores são iguais
     // ToDo: colocar aqui a zerada de acordo com a cor que foi feita nos quadros
     if (newGrid.every((row) => row.every((color) => color === newGrid[0][0]))) {
-      alert('🎉 WIN WIN WIN!');
+      // alert('🎉 WIN WIN WIN!');
+      setWinImg(() => data.find((item) => item.color === newGrid[0][0] && item.img).img);
+      setWin(true);
     }
   };
 
@@ -74,5 +82,20 @@ export default function Boxes({ x, y }) {
     return boxesColors;
   }
 
-  return <div className="boxes">{renderBoxes()}</div>;
+  return (
+    <div className="boxes">
+      {!win ? (
+        renderBoxes()
+      ) : (
+        <div className="winScreen">
+          <img src={winImg} alt="" style={{ width: '100%', height: '100%' }} />
+          <button onClick={() => setWin(false)}>Jogar de novo</button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+{
+  /* ; */
 }
