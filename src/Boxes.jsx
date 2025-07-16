@@ -1,8 +1,6 @@
 import Box from './Box';
 import { data } from './data/data.js';
 import { useState } from 'react';
-import Alert from 'react-bootstrap/Alert';
-import Button from 'react-bootstrap/Button';
 
 export default function Boxes({ x, y }) {
   // const colors = ['#39FF14', '#FF3131', '#00FFFF', '#FF6EC7', '#FFFF33'];
