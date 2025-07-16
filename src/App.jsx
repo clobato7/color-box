@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <h2>Jogo do Arthur</h2>
-      <Boxes x={2} y={2} />
+      <Boxes x={5} y={5} />
     </>
   );
 }
